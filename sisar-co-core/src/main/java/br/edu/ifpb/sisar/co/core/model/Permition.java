@@ -11,7 +11,8 @@ package br.edu.ifpb.sisar.co.core.model;
  */
 public enum Permition {
     
-    READ,
-    WRITE
+    READ, // This allow view and download a archive or directory
+    WRITE, // This allow create or exclude directory or files on specific directory with this permition
+    OWNER // This have total permition for create, modify or exclude archives or directories
     
 }

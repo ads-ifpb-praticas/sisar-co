@@ -25,7 +25,7 @@ public class ArchiveValidator {
         return validator.isValid(archive.getOwner());
     }
     
-    private boolean nameIsValid(Archive archive) {
+    public boolean nameIsValid(Archive archive) {
         if (archive.getName() == null || archive.getName().isEmpty()) return false;
         Pattern pattern = Pattern.compile("[a-zA-Z]_!_#_-");
         Matcher matcher = pattern.matcher(archive.getName());

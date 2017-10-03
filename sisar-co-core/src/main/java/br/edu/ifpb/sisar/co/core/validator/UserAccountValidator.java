@@ -17,26 +17,29 @@ public class UserAccountValidator {
     
     public boolean isValid(UserAccount account) {
         if (account == null) return false;
-        return nameIsValid(account) && emailIsValid(account) && passwordIsValid(account);
+        return nameIsValid(account.getName()) &&
+                emailIsValid(account.getEmail()) && 
+                passwordIsValid(account.getPassword());
     }
     
-    private boolean nameIsValid(UserAccount account) {
-        if (account.getName() == null || account.getName().isEmpty()) return false;
-        Pattern pattern = Pattern.compile("[a-zA-Z]+(\\s[a-zA-Z]+)*");
-        Matcher matcher = pattern.matcher(account.getName());
+    public static boolean nameIsValid(String name) {
+        if (name == null || name.isEmpty()) return false;
+        Pattern pattern = Pattern.compile("[a-zA-ZÁ-úÃ-ũ]+(\\s[a-zA-Z]+)*");
+        Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
     
-    private boolean emailIsValid(UserAccount account) {
-        if (account.getEmail() == null || account.getEmail().isEmpty()) return false;
+    public static boolean emailIsValid(String email) {
+        if (email == null || email.isEmpty()) return false;
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-        Matcher matcher = pattern.matcher(account.getEmail());
+        Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
     
-    private boolean passwordIsValid(UserAccount account) {
-        if (account.getPassword() == null) return false;
-        return !(account.getPassword().length() < 8 || account.getPassword().length() > 16);
+    public static boolean passwordIsValid(String password) {
+        if (password == null) return false;
+        return !(password.length() < 8 || password.length() > 16);
     }
+    
 }

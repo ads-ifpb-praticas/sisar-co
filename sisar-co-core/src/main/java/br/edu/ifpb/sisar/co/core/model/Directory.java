@@ -19,4 +19,39 @@ public class Directory implements Serializable {
     private UserAccount owner;
     private List<Archive> archives;
 
+    public Directory() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Directory getFather() {
+        return father;
+    }
+
+    public void setFather(Directory father) {
+        this.father = father;
+    }
+
+    public UserAccount getOwner() {
+        return owner;
+    }
+
+    public void setOwner(UserAccount owner) {
+        this.owner = owner;
+    }
+
+    public List<Archive> getArchives() {
+        return archives;
+    }
+
+    public void setArchives(List<Archive> archives) {
+        this.archives = archives;
+    }
+
 }

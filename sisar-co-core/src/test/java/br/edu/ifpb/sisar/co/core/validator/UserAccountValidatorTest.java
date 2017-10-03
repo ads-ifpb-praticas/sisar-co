@@ -80,4 +80,12 @@ public class UserAccountValidatorTest {
         assertFalse(validator.isValid(account));
     }
     
+    @Test
+    public void testaNomeComCaracteresEspeciais() {
+        UserAccount account = new UserAccount();
+        account.setName("Maria Cecilia Andradeũ Caciçaque");
+        account.setEmail("ceciandrade@acom.br");
+        account.setPassword("124ghgh23");
+        assertTrue(validator.isValid(account));
+    }
 }
