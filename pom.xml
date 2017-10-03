@@ -3,12 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.edu.ifpb</groupId>
     <artifactId>sisar-co</artifactId>
-    <version>1.0</version>
+    <version>1.0.0${build.number}</version>
     <packaging>pom</packaging>
     <modules>
         <module>sisar-co-core</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <build.number>-SNAPSHOT</build.number>
     </properties>
 </project>
