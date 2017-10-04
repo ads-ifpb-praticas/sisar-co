@@ -4,7 +4,7 @@
     <parent>
         <groupId>br.edu.ifpb</groupId>
         <artifactId>sisar-co</artifactId>
-        <version>1.0.0.${build.number}</version>
+        <version>1.0.0${build.number}</version>
     </parent>
     <artifactId>sisar-co-core</artifactId>
     <packaging>jar</packaging>

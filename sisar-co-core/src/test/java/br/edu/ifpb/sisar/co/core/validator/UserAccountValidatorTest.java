@@ -42,13 +42,29 @@ public class UserAccountValidatorTest {
     @Test
     public void testaNomeVazio() {
         UserAccount account = new UserAccount();
-        account.setName("");
+        account.setName("".trim());
+        assertFalse(validator.isValid(account));
+    }
+    
+    @Test 
+    public void testaEmailVazio() {
+        UserAccount account = new UserAccount();
+        account.setName("Ana Josefa Vieira Santos");
+        account.setEmail("".trim());
+        account.setPassword("AnaAna12111");
         assertFalse(validator.isValid(account));
     }
     
     @Test
-    public void testaNomeNulo() {
+    public void testaObjetoNulo() {
         assertFalse(validator.isValid(null));
+    }
+    
+    @Test
+    public void testaNomeNulo() {
+        UserAccount account = new UserAccount();
+        account.setName(null);
+        validator.isValid(account);
     }
     
     @Test
@@ -101,6 +117,24 @@ public class UserAccountValidatorTest {
         account.setName("Maria Cecilia Andradeũ 5 Caciçaque");
         account.setEmail("ceciandrade@acom.br");
         account.setPassword("124ghgh23");
+        assertFalse(validator.isValid(account));
+    }
+    
+    @Test
+    public void testaEmailNulo() {
+        UserAccount account = new UserAccount();
+        account.setName("Maria ceça");
+        account.setEmail(null);
+        account.setPassword("12121222");
+        assertFalse(validator.isValid(account));
+    }
+    
+    @Test
+    public void testaPassNulo() {
+        UserAccount account = new UserAccount();
+        account.setName("Maria ceça");
+        account.setEmail("cecazinha@ig.com.br");
+        account.setPassword(null);
         assertFalse(validator.isValid(account));
     }
 }
