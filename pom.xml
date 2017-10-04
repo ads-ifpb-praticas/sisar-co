@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.edu.ifpb</groupId>
     <artifactId>sisar-co</artifactId>
-    <version>1.0.0${build.number}</version>
+    <version>1.0.0.${build.number}</version>
     <packaging>pom</packaging>
     <modules>
         <module>sisar-co-core</module>
