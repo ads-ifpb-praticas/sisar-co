@@ -7,6 +7,7 @@ package br.edu.ifpb.sisar.co.core.validator;
 
 import br.edu.ifpb.sisar.co.core.model.Archive;
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -14,7 +15,12 @@ import org.junit.Test;
  * @author miolivc
  */
 public class ArchiveValidatorTest {
-    private final ArchiveValidator validator = new ArchiveValidator();
+    private ArchiveValidator validator;
+    
+    @Before
+    public void setUp() {
+        validator = new ArchiveValidator();
+    }
     
     @Test
     public void testaArquivoSemValores() {

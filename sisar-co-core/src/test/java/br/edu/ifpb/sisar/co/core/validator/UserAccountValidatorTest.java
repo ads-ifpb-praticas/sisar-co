@@ -7,6 +7,7 @@ package br.edu.ifpb.sisar.co.core.validator;
 
 import br.edu.ifpb.sisar.co.core.model.UserAccount;
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -15,7 +16,12 @@ import org.junit.Test;
  */
 public class UserAccountValidatorTest {
     
-    private final UserAccountValidator validator = new UserAccountValidator();
+    private UserAccountValidator validator;
+    
+    @Before
+    public void setUp() {
+        validator = new UserAccountValidator();
+    }
     
     @Test
     public void testaNomeInvalidoCaracEspecial() {
@@ -87,5 +93,14 @@ public class UserAccountValidatorTest {
         account.setEmail("ceciandrade@acom.br");
         account.setPassword("124ghgh23");
         assertTrue(validator.isValid(account));
+    }
+    
+    @Test
+    public void testaCaracEspecNum() {
+        UserAccount account = new UserAccount();
+        account.setName("Maria Cecilia Andradeũ 5 Caciçaque");
+        account.setEmail("ceciandrade@acom.br");
+        account.setPassword("124ghgh23");
+        assertFalse(validator.isValid(account));
     }
 }

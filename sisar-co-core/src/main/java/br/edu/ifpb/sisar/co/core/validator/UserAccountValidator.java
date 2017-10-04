@@ -24,7 +24,7 @@ public class UserAccountValidator {
     
     public static boolean nameIsValid(String name) {
         if (name == null || name.isEmpty()) return false;
-        Pattern pattern = Pattern.compile("[a-zA-ZÁ-úÃ-ũ]+(\\s[a-zA-Z]+)*");
+        Pattern pattern = Pattern.compile("[a-zA-ZÁ-úÃ-ũ]+(\\s[a-zA-ZÁ-úÃ-ũ]+)*");
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
