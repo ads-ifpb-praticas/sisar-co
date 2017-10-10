@@ -12,4 +12,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <build.number>-SNAPSHOT</build.number>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.7</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
