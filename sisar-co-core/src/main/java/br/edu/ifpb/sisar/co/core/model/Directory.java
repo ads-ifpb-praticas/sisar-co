@@ -5,14 +5,14 @@
  */
 package br.edu.ifpb.sisar.co.core.model;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author miolivc
  */
-public class Directory extends File implements Serializable {
+public class Directory extends File {
+    
     private List<File> files;
 
     public Directory() {

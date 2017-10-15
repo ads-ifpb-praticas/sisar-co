@@ -5,13 +5,11 @@
  */
 package br.edu.ifpb.sisar.co.core.model;
 
-import java.io.Serializable;
-
 /**
  *
  * @author miolivc
  */
-public class Archive extends File implements Serializable {
+public class Archive extends File {
     
     private String type;
     private long lenght;

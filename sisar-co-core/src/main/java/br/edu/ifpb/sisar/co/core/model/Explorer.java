@@ -11,16 +11,4 @@ package br.edu.ifpb.sisar.co.core.model;
  */
 public class Explorer {
     
-    public void createArchive(UserAccount owner, Directory directory, Archive archive) {
-        
-    }
-    
-    public void createDirectory(UserAccount owner, Directory directory) {
-        
-    }
-    
-    public void sharedArchive(Archive archive, UserAccount account) {
-        
-    }
-    
 }
