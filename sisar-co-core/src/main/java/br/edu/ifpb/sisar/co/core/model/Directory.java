@@ -12,46 +12,23 @@ import java.util.List;
  *
  * @author miolivc
  */
-public class Directory implements Serializable {
-    
-    private String name;
-    private Directory father;
-    private UserAccount owner;
-    private List<Archive> archives;
+public class Directory extends File implements Serializable {
+    private List<File> files;
 
     public Directory() {
     }
 
-    public String getName() {
-        return name;
+    public List<File> getFiles() {
+        return files;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFiles(List<File> files) {
+        this.files = files;
     }
 
-    public Directory getFather() {
-        return father;
-    }
-
-    public void setFather(Directory father) {
-        this.father = father;
-    }
-
-    public UserAccount getOwner() {
-        return owner;
-    }
-
-    public void setOwner(UserAccount owner) {
-        this.owner = owner;
-    }
-
-    public List<Archive> getArchives() {
-        return archives;
-    }
-
-    public void setArchives(List<Archive> archives) {
-        this.archives = archives;
+    @Override
+    public boolean isLeaf() {
+        return false;
     }
 
 }

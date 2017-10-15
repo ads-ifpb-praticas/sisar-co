@@ -11,31 +11,13 @@ import java.io.Serializable;
  *
  * @author miolivc
  */
-public class Archive implements Serializable {
+public class Archive extends File implements Serializable {
     
-    private UserAccount owner;
-    private String name;
     private String type;
     private long lenght;
     private byte[] content;
 
     public Archive() {
-    }
-
-    public UserAccount getOwner() {
-        return owner;
-    }
-
-    public void setOwner(UserAccount owner) {
-        this.owner = owner;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getType() {
@@ -61,5 +43,9 @@ public class Archive implements Serializable {
     public void setContent(byte[] content) {
         this.content = content;
     }
-    
+
+    @Override
+    public boolean isLeaf() {
+        return true;
+    }
 }
